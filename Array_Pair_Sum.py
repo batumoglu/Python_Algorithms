@@ -10,7 +10,6 @@ def pair_sum(arr, k):
         else:
             output.add((min(num, target), max(num, target)))
             seen.remove(target)
-    return(len(output))
+    print(len(output))
 
-count = pair_sum([1,3,2,2,],4)
-print(count)
+pair_sum([1,3,2,2,],4)
