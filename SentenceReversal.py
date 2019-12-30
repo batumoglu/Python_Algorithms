@@ -4,6 +4,23 @@ def rev_words1(s):
 def rev_words2(s):
     return " ".join(s.split()[::-1])
 
+def rev_words3(s):
+    words = []
+    length = len(s)
+    space = [' ']
+
+    i = 0
+
+    while i < length:
+        if s[i] not in space:
+            word_start = i
+
+            while i < length and s[i] not in space:
+                i += 1
+            words.append(s[word_start:i])
+        i += 1
+    return " ".join(reversed(words))
+
 from nose.tools import assert_equal
 
 class ReversalTest(object):
@@ -22,3 +39,6 @@ if __name__ == "__main__":
 
     t = ReversalTest()
     t.test(rev_words2)
+
+    t = ReversalTest()
+    t.test(rev_words3)
