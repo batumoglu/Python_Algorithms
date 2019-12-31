@@ -1,10 +1,22 @@
-def finder(arr1, arr2):
-    num = 0
-    for n in arr1:
-        num += n
-    for n in arr2:
-        num -= n
-    return num
+def finder1(arr1, arr2):
+    return sum(arr1)-sum(arr2)
+
+def finder2(arr1, arr2):
+    count = 0
+    for num in arr1:
+        count += num
+
+    for num in arr2:
+        count -= num
+    return count
+
+def finder3(arr1, arr2):
+    arr1 = sorted(arr1)
+    arr2 = sorted(arr2)
+
+    for num1, num2 in zip(arr1, arr2):
+        if num1 != num2:
+            return num1
 
 from nose.tools import assert_equal
 
@@ -18,4 +30,6 @@ class TestFinder(object):
 
 if __name__ == "__main__":
     t = TestFinder()
-    t.test(finder)
+    t.test(finder1)
+    t.test(finder2)
+    t.test(finder3)
