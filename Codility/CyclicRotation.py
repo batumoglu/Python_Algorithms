@@ -3,13 +3,13 @@
 
 def solution(A, K):
     # write your code in Python 3.6
-    for i in range(K):
+    for i in xrange(K):
         value = A.pop()
         A.insert(0, value)
     return A
 
 def solution2(A, K):
-    for i in range(K):
+    for i in xrange(K):
         last_value = A[-1]
         for j in range(len(A)-1, 0, -1):
             A[j] = A[j-1]
