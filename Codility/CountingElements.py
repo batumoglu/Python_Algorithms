@@ -39,5 +39,20 @@ def fast_swap(A, B, m):
             return True
     return False
 
+def mySwap(A, B, m):
+    sumA = sum(A)
+    sumB = sum(B)
+    change = sumB - sumA
+    count = counting(A, m)
+
+    for i in range(len(B)):
+        seek = B[i] - change
+        if count[seek] > 0:
+            return True
+    return False
+        
+
 if __name__ =='__main__':
+    print(slow_swap([1,2,3,4],[2,3,4,5],5))
     print(fast_swap([1,2,3,4],[2,3,4,5],5))
+    print(mySwap([1,2,3,4],[2,3,4,5],5))
