@@ -20,6 +20,11 @@ def solution2(A, B, K):
             num += 1
     return count
 
+import math
+def solution3(A, B, K):
+    newA = math.ceil(A / K)
+    newB = math.floor(B / K)
+    return newB - newA + 1
 
     
 if __name__ == '__main__':
