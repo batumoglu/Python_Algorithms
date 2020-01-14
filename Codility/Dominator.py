@@ -20,6 +20,8 @@ def solution(A):
             count += 1
     if count > n/2:
         leader = candidate
+    else:
+        return -1
     for i in range(n):
         if A[i] == leader:
             return i
