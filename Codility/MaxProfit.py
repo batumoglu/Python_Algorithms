@@ -6,6 +6,15 @@ def solution(A):
             profit = max(profit, A[j]-A[i])
     return profit 
 
+def solution2(A):
+    max_profit = float('-inf')
+    min_day = float('inf')
+     
+    for day in A:
+        min_day = min(min_day, day)
+        max_profit = max(max_profit, day-min_day)
+     
+    return max_profit
 
 if __name__ == '__main__':
-    print(solution([23171,21011,21123,21366,21013,21367]))
+    print(solution2([23171,21011,21123,21366,21013,21367]))
