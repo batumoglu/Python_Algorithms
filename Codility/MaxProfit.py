@@ -7,7 +7,7 @@ def solution(A):
     return profit 
 
 def solution2(A):
-    max_profit = float('-inf')
+    max_profit = 0
     min_day = float('inf')
      
     for day in A:
